@@ -26,7 +26,7 @@ public class DataSourceConfig {
 	public DataSource getDataSource(){
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 		EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.HSQL)
-			.addScript("db/db.sql")
+			.addScript("/resources/db/db.sql")
 			.build();
 		return db;
 	}
