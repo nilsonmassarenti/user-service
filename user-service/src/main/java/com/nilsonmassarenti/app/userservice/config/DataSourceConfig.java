@@ -27,7 +27,7 @@ public class DataSourceConfig {
 		System.out.println("current dir = " + System.getProperty("user.dir"));
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 		EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.HSQL)
-			.addScript("src/resources/db/db.sql")
+			.addScript("src/db/db.sql")
 			.build();
 		return db;
 	}
