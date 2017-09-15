@@ -1,5 +1,7 @@
 package com.nilsonmassarenti.app.userservice.config;
 
+import java.io.File;
+
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -24,6 +26,14 @@ public class DataSourceConfig {
 	
 	@Bean
 	public DataSource getDataSource(){
+		File f = new File("file.txt");
+        System.out.println(f.getPath());
+        System.out.println(f.getAbsolutePath());
+        try {
+            System.out.println(f.getCanonicalPath());
+        } catch (Exception e) {
+			// TODO: handle exception
+		}
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		String file = classLoader.getResource("db/db.sql").getPath();
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
