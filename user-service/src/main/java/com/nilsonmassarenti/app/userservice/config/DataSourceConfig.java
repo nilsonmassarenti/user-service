@@ -24,9 +24,11 @@ public class DataSourceConfig {
 	
 	@Bean
 	public DataSource getDataSource(){
+		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+		String file = classLoader.getResource("db/db.sql").getPath();
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 		EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.HSQL)
-			.addScript("/app/src/resources/db/db.sql")
+			.addScript(file)
 			.build();
 		return db;
 	}

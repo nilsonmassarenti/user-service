@@ -11,9 +11,9 @@ public class General {
 	public static Properties getProp() throws IOException {
 		Properties props = new Properties();
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
-		System.out.println();
 		FileInputStream file = new FileInputStream(
 				classLoader.getResource("properties/messages.properties").getFile());
+		System.out.println(classLoader.getResource("db/db.sql").getPath());	
 		props.load(file);
 		return props;
 
