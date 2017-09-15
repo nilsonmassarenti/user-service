@@ -24,6 +24,7 @@ public class DataSourceConfig {
 	
 	@Bean
 	public DataSource getDataSource(){
+		System.out.println("current dir = " + System.getProperty("user.dir"));
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 		EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.HSQL)
 			.addScript("src/resources/db/db.sql")
