@@ -13,7 +13,7 @@ public class General {
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		FileInputStream file = new FileInputStream(
 				classLoader.getResource("properties/messages.properties").getFile());
-		System.out.println(classLoader.getResource("db/db.sql").getPath());	
+		System.out.println(classLoader.getResource("properties/messages.properties"));	
 		props.load(file);
 		return props;
 
